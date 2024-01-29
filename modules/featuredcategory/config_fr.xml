@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>featuredcategory</name>
+    <displayName><![CDATA[Featured Category]]></displayName>
+    <version><![CDATA[1.0.0]]></version>
+    <description><![CDATA[Featured Category for presta]]></description>
+    <author><![CDATA[Mita]]></author>
+    <tab><![CDATA[administration]]></tab>
+    <is_configurable>1</is_configurable>
+    <need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>
