@@ -93,7 +93,13 @@
               </div>
             </div>
           </div>
+
         </div>
+        {if $cart['subtotals']['products']['amount'] < Configuration::get('PS_SHIPPING_FREE_PRICE')}
+        <div class="row">
+          <span>{l s='Plus que '}{(Configuration::get('PS_SHIPPING_FREE_PRICE') - $cart['subtotals']['products']['amount'])|string_format:"%.2f"}{$currency.sign}{l s=' pour beneficier de la livraison gratuite'}</span>
+        </div>
+        {/if}
       </div>
       {hook h='displayCartModalFooter' product=$product}
     </div>
