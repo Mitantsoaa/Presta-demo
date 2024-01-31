@@ -113,6 +113,14 @@
       </div>
 
       {include file='catalog/_partials/product-flags.tpl'}
+       <form action="{$urls.pages.cart}" method="post">
+        <input type="hidden" name="token" value="{$static_token}">
+          	<input type="hidden" value="{$product.id_product}" name="id_product">
+          	<input type="hidden" style="padding: 9px 10px; float:left;width: 30%; margin-left: 10px;" class="input-group form-control" name="qty" min="1" value="1">
+          	<button style="float:left;margin-left: 13px" data-button-action="add-to-cart" class="btn btn-primary">
+          	Add to cart
+          	</button>
+    </form>
     </div>
   </article>
 </div>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>uploadfile</name>
+	<displayName><![CDATA[Upload file in front]]></displayName>
+	<version><![CDATA[1.0.0]]></version>
+	<description><![CDATA[Upload file in front]]></description>
+	<author><![CDATA[Mita]]></author>
+	<tab><![CDATA[administration]]></tab>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+</module>
