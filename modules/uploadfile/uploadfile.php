@@ -59,16 +59,15 @@ class UploadFile extends Module
      */
     public function install()
     {
-        Configuration::updateValue('UPLOADFILE_LIVE_MODE', false);
 
         return parent::install() &&
             $this->registerHook('header') &&
-            $this->registerHook('displayBackOfficeHeader');
+            $this->registerHook('displayBackOfficeHeader') &&
+            $this->registerHook('displayReassurance');
     }
 
     public function uninstall()
     {
-        Configuration::deleteByName('UPLOADFILE_LIVE_MODE');
 
         return parent::uninstall();
     }
@@ -133,36 +132,11 @@ class UploadFile extends Module
                 ),
                 'input' => array(
                     array(
-                        'type' => 'switch',
-                        'label' => $this->l('Live mode'),
-                        'name' => 'UPLOADFILE_LIVE_MODE',
-                        'is_bool' => true,
-                        'desc' => $this->l('Use this module in live mode'),
-                        'values' => array(
-                            array(
-                                'id' => 'active_on',
-                                'value' => true,
-                                'label' => $this->l('Enabled')
-                            ),
-                            array(
-                                'id' => 'active_off',
-                                'value' => false,
-                                'label' => $this->l('Disabled')
-                            )
-                        ),
-                    ),
-                    array(
-                        'col' => 3,
+                        'col' => 6,
                         'type' => 'text',
-                        'prefix' => '<i class="icon icon-envelope"></i>',
-                        'desc' => $this->l('Enter a valid email address'),
-                        'name' => 'UPLOADFILE_ACCOUNT_EMAIL',
+                        'desc' => $this->l('Entrer la catégorie à ajouter'),
+                        'name' => 'ITEK_SOUS_ORDONNANCE',
                         'label' => $this->l('Email'),
-                    ),
-                    array(
-                        'type' => 'password',
-                        'name' => 'UPLOADFILE_ACCOUNT_PASSWORD',
-                        'label' => $this->l('Password'),
                     ),
                 ),
                 'submit' => array(
@@ -178,9 +152,7 @@ class UploadFile extends Module
     protected function getConfigFormValues()
     {
         return array(
-            'UPLOADFILE_LIVE_MODE' => Configuration::get('UPLOADFILE_LIVE_MODE', true),
-            'UPLOADFILE_ACCOUNT_EMAIL' => Configuration::get('UPLOADFILE_ACCOUNT_EMAIL', 'contact@prestashop.com'),
-            'UPLOADFILE_ACCOUNT_PASSWORD' => Configuration::get('UPLOADFILE_ACCOUNT_PASSWORD', null),
+            'ITEK_SOUS_ORDONNANCE' => Configuration::get('ITEK_SOUS_ORDONNANCE', true),
         );
     }
 
