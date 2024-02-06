@@ -186,6 +186,7 @@ class UploadFile extends Module
     {
         $this->context->controller->addJS($this->_path.'/views/js/front.js');
         $this->context->controller->addCSS($this->_path.'/views/css/front.css');
+        $this->context->controller->addJs('https://code.jquery.com/jquery-2.2.4.min.js');
     }
 
     public function hookDisplayReassurance()

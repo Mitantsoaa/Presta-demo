@@ -24,4 +24,5 @@
  *}
 <div class="product-additional-info js-product-additional-info">
   {hook h='displayProductAdditionalInfo' product=$product}
+  <input type="hidden" name="ordo-name" id = "ordo-name" value=""/>
 </div>

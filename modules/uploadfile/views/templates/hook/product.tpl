@@ -10,8 +10,8 @@
             </div>
 
         </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         <script>
-        import $ from Jquery;
         var file_name = "";
         $('#ordonnace_file').on('change', function () {
             var fileInput = $(this)[0];
@@ -33,7 +33,8 @@
                     }else{
                         $('#ordo-file').append('<span class="ordo-message-success">'+response.message+'</span>')
                     }
-                    $('#id_prod').val(response.file)
+                    console.log(response)
+                    $('#ordo-name').val(response.file)
                     file_name = response.file
                     $('button.add-to-cart').show();
                     $('p.notpossible_to_cart').hide();
