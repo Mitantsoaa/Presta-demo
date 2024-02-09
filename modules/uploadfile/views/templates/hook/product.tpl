@@ -33,7 +33,7 @@
                     }else{
                         $('#ordo-file').append('<span class="ordo-message-success">'+response.message+'</span>')
                     }
-                    console.log(response)
+                    console.log(response.file)
                     $('#ordo-name').val(response.file)
                     file_name = response.file
                     $('button.add-to-cart').show();
